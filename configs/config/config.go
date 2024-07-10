@@ -58,22 +58,6 @@ func Init() (*Config, error) {
 	return &config, nil
 }
 
-//func parseEnv(cfg *Config) error {
-//	if err := viper.BindEnv("TOKEN"); err != nil {
-//		return err
-//	}
-//	if err := viper.BindEnv("consumer_key"); err != nil {
-//		return err
-//	}
-//	if err := viper.BindEnv("auth_server_url"); err != nil {
-//		return err
-//	}
-//	cfg.TelegramToken = viper.GetString("TOKEN")
-//	cfg.PocketConsumerKey = viper.GetString("consumer_key")
-//	cfg.AuthServerURL = viper.GetString("auth_server_url")
-//	return nil
-//}
-
 func parseEnv(cfg *Config) error {
 	if err := godotenv.Load(".env"); err != nil {
 		log.Fatal(err)
